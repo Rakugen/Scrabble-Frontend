@@ -1,12 +1,508 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8">
-    <title>Scrabble</title>
-    <script src="src/index.js" charset="utf-8"></script>
+    <link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./assets/style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
   <body>
-    <h1>Scrabble</h1>
-
+    <table id="box-table-b">
+    <thead>
+      <tr>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #d72421;">
+            <span class="BoardLetterTW">TW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #d72421;">
+            <span class="BoardLetterTW">TW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #d72421;">
+            <span class="BoardLetterTW">TW</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #4695ca;">
+            <span class="BoardLetterTL">TL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #4695ca;">
+            <span class="BoardLetterTL">TL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #4695ca;">
+            <span class="BoardLetterTL">TL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #4695ca;">
+            <span class="BoardLetterTL">TL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #4695ca;">
+            <span class="BoardLetterTL">TL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #4695ca;">
+            <span class="BoardLetterTL">TL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #d72421;">
+            <span class="BoardLetterTW">TW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDL">ST</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #d72421;">
+            <span class="BoardLetterTW">TW</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #4695ca;">
+            <span class="BoardLetterTL">TL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #4695ca;">
+            <span class="BoardLetterTL">TL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #4695ca;">
+            <span class="BoardLetterTL">TL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #4695ca;">
+            <span class="BoardLetterTL">TL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #6fe6f6;">
+            <span class="BoardLetterDL">DL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #4695ca;">
+            <span class="BoardLetterTL">TL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #4695ca;">
+            <span class="BoardLetterTL">TL</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock">
+            <span class="BoardLetterDW">DW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #d72421;">
+            <span class="BoardLetterTW">TW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #d72421;">
+            <span class="BoardLetterTW">TW</span>
+          </div>
+        </td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">&nbsp;</td>
+        <td width="70" height="70">
+          <div id="BoardBlock" style="background: #d72421;">
+            <span class="BoardLetterTW">TW</span>
+          </div></td>
+      </tr>
+      </thead>
+    </table>
+    <table width="1050" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+      </tr>
+    </table>
   </body>
 </html>
