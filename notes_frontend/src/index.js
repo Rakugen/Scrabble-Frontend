@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const board = document.querySelector("#boardtable")
 
     board.addEventListener('click', (e) => {
-      e.target.innerHTML = "A"
+      e.target.innerHTML = `<div>
+        <span class="ScrabbleLetter">A</span>
+        <span class="ScrabbleNumber">1</span>
+      </div>`
     })
 });

@@ -16,17 +16,41 @@ table {
 
 table  tr  {
   border : 1px solid black;
-  height:40px;
+  height:60px;
 }
 table  td{
   border :1px solid black;
   background:-webkit-gradient(linear, 100% 100%, 0% 5%, from(#c67d53), to(#794628));
-  width:40px;
+  width:60px;
   padding: 0px;
-  min-width: 40px;
-  max-width: 40px;
-  width: 40px;
-  height: 40px;
+  min-width: 60px;
+  max-width: 60px;
+  width: 60px;
+  height: 60px;
   text-align: center;
   white-space: nowrap;
+}
+
+.ScrabbleLetter {
+  font-family: 'Asap', serif;
+  font-size: 45px;
+  color: #272832;
+  text-shadow:1px 1px 0px #fff5d7;
+  margin: 0px;
+  user-select: none;
+   -moz-user-select: -moz-none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+}
+
+.ScrabbleNumber {
+  font-family: 'Asap', serif;
+  font-size: 10px;
+  color: #272832;
+  text-shadow:1px 1px 0px #fff5d7;
+  margin: 0px;
+  user-select: none;
+   -moz-user-select: -moz-none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
 }
