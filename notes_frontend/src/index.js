@@ -3,9 +3,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const board = document.querySelector("#boardtable")
 
     board.addEventListener('click', (e) => {
-      e.target.innerHTML = `<div>
-        <span class="ScrabbleLetter">A</span>
-        <span class="ScrabbleNumber">1</span>
-      </div>`
+      const pickedLetter = `<div><span class="ScrabbleLetter">B</span>
+      <span class="ScrabbleNumber">1</span></div>`
+        if(e.target.tagName === "SPAN"){
+          console.log(e.target.parentNode)
+          e.target.parentNode.remove()
+        } else if(e.target.tagName === "TD"){
+          e.target.innerHTML = pickedLetter
+        }
     })
 });
