@@ -1,17 +1,22 @@
 body {
-  background:-webkit-gradient(linear, 100% 100%, 0% 5%, from(#e3c0ac), to(#fae6d1));
+  /* background:-webkit-gradient(linear, 100% 100%, 0% 5%, from(#e3c0ac), to(#fae6d1)); */
   margin-left: 50px;
 	margin-top: 50px;
 	margin-right: 50px;
 	margin-bottom: 50px;
 }
 
+h1 {
+  text-align: center;
+}
+
 #gamecanvas {
+  text-align: center;
   position: absolute;
-  border:5px solid  black;
 }
 table {
   table-layout:fixed;
+  border: 5px solid  black;
 }
 
 table  tr  {
@@ -20,7 +25,7 @@ table  tr  {
 }
 table  td{
   border :1px solid black;
-  background:-webkit-gradient(linear, 100% 100%, 0% 5%, from(#c67d53), to(#794628));
+  /* background:-webkit-gradient(linear, 100% 100%, 0% 5%, from(#c67d53), to(#794628)); */
   width:60px;
   padding: 0px;
   min-width: 60px;
