@@ -1,12 +1,32 @@
+body {
+  background:-webkit-gradient(linear, 100% 100%, 0% 5%, from(#e3c0ac), to(#fae6d1));
+  margin-left: 50px;
+	margin-top: 50px;
+	margin-right: 50px;
+	margin-bottom: 50px;
+}
+
 #gamecanvas {
   position: absolute;
   border:5px solid  black;
 }
+table {
+  table-layout:fixed;
+}
+
 table  tr  {
   border : 1px solid black;
   height:40px;
 }
 table  td{
   border :1px solid black;
+  background:-webkit-gradient(linear, 100% 100%, 0% 5%, from(#c67d53), to(#794628));
   width:40px;
+  padding: 0px;
+  min-width: 40px;
+  max-width: 40px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  white-space: nowrap;
 }
