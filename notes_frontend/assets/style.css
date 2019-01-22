@@ -121,8 +121,8 @@
 
   #BoardBlock {
     background-color: #ffbead;
-    height: 70px;
-    width: 70px;
+    height: 69px;
+    width: 69px;
     -moz-box-shadow: inset 0px 3px 5px #acacac;
     -webkit-box-shadow:inset 0px 3px 5px #acacac;
     box-shadow: inset 0px 0px 5px #acacac;
@@ -152,4 +152,12 @@
     border-right: 4px solid #d8d8d8;
     border-left: 4px solid #d8d8d8;
     border-top: 4px solid #d8d8d8;
+    padding: 0px;
+
+    min-width: 70px;
+    max-width: 70px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    white-space: nowrap;
   }
