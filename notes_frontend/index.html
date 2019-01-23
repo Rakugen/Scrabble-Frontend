@@ -8,52 +8,41 @@
     <script src="src/index.js" charset="utf-8"></script>
   </head>
   <body>
-    <div id="gamecanvas">
-      <h1>Scrabble</h1>
-      <table id="boardtable">
-        <tr> <td><td><td><td><td><td><td><td><td><td><td><td><td><td><td>
-        <tr> <td><td><td><td><td><td><td><td><td><td><td><td><td><td><td>
-        <tr> <td><td><td><td><td><td><td><td><td><td><td><td><td><td><td>
-        <tr> <td><td><td><td><td><td><td><td><td><td><td><td><td><td><td>
-        <tr> <td><td><td><td><td><td><td><td><td><td><td><td><td><td><td>
-        <tr> <td><td><td><td><td><td><td><td><td><td><td><td><td><td><td>
-        <tr> <td><td><td><td><td><td><td><td><td><td><td><td><td><td><td>
-        <tr> <td><td><td><td><div>
-          <span class="ScrabbleLetter">S</span>
-          <span class="ScrabbleNumber">1</span>
-        </div><td><div>
-          <span class="ScrabbleLetter">C</span>
-          <span class="ScrabbleNumber">1</span>
-        </div><td><div>
-          <span class="ScrabbleLetter">R</span>
-          <span class="ScrabbleNumber">1</span>
-        </div><td><div>
-          <span class="ScrabbleLetter">A</span>
-          <span class="ScrabbleNumber">1</span>
-        </div><td><div>
-          <span class="ScrabbleLetter">B</span>
-          <span class="ScrabbleNumber">1</span>
-        </div><td><div>
-          <span class="ScrabbleLetter">B</span>
-          <span class="ScrabbleNumber">1</span>
-        </div><td><div>
-          <span class="ScrabbleLetter">L</span>
-          <span class="ScrabbleNumber">1</span>
-        </div><td><div>
-          <span class="ScrabbleLetter">E</span>
-          <span class="ScrabbleNumber">1</span>
-        </div><td><div>
-          <span class="ScrabbleLetter">:]</span>
-          <span class="ScrabbleNumber">1</span>
-        </div><td><td><td>
-        <tr> <td><td><td><td><td><td><td><td><td><td><td><td><td><td><td>
-        <tr> <td><td><td><td><td><td><td><td><td><td><td><td><td><td><td>
-        <tr> <td><td><td><td><td><td><td><td><td><td><td><td><td><td><td>
-        <tr> <td><td><td><td><td><td><td><td><td><td><td><td><td><td><td>
-        <tr> <td><td><td><td><td><td><td><td><td><td><td><td><td><td><td>
-        <tr> <td><td><td><td><td><td><td><td><td><td><td><td><td><td><td>
-        <tr> <td><td><td><td><td><td><td><td><td><td><td><td><td><td><td>
-      </table>
+    <div id="gamecanvas" class="row">
+      <div class=".col1">
+        <h1>Scrabble</h1>
+        <table id="boardtable">
+          <tr> <td id="tripleWord"><td><td><td id="doubleLetter"><td><td><td><td id="tripleWord"><td><td><td><td id="doubleLetter"><td><td><td id="tripleWord">
+          <tr> <td><td id="doubleWord"><td><td><td><td id="tripleLetter"><td><td><td><td id="tripleLetter"><td><td><td><td id="doubleWord"><td>
+          <tr> <td><td><td id="doubleWord"><td><td><td><td id="doubleLetter"><td><td id="doubleLetter"><td><td><td><td id="doubleWord"><td><td>
+          <tr> <td id="doubleLetter"><td><td><td id="doubleWord"><td><td><td><td id="doubleLetter"><td><td><td><td id="doubleWord"><td><td><td id="doubleLetter">
+          <tr> <td><td><td><td><td id="doubleWord"><td><td><td><td><td><td id="doubleWord"><td><td><td><td>
+          <tr> <td><td id="tripleLetter"><td><td><td><td id="tripleLetter"><td><td><td><td id="tripleLetter"><td><td><td><td id="tripleLetter"><td>
+          <tr> <td><td><td id="doubleLetter"><td><td><td><td id="doubleLetter"><td><td id="doubleLetter"><td><td><td><td id="doubleLetter"><td><td>
+          <tr> <td id="tripleWord"><td><td><td id="doubleLetter"><td><td><td><td id="doubleWord"><td><td><td><td id="doubleLetter"><td><td><td id="tripleWord">
+          <tr> <td><td><td id="doubleLetter"><td><td><td><td id="doubleLetter"><td><td id="doubleLetter"><td><td><td><td id="doubleLetter"><td><td>
+          <tr> <td><td id="tripleLetter"><td><td><td><td id="tripleLetter"><td><td><td><td id="tripleLetter"><td><td><td><td id="tripleLetter"><td>
+          <tr> <td><td><td><td><td id="doubleWord"><td><td><td><td><td><td id="doubleWord"><td><td><td><td>
+          <tr> <td id="doubleLetter"><td><td><td id="doubleWord"><td><td><td><td id="doubleLetter"><td><td><td><td id="doubleWord"><td><td><td id="doubleLetter">
+          <tr> <td><td><td id="doubleWord"><td><td><td><td id="doubleLetter"><td><td id="doubleLetter"><td><td><td><td id="doubleWord"><td><td>
+          <tr> <td><td id="doubleWord"><td><td><td><td id="tripleLetter"><td><td><td><td id="tripleLetter"><td><td><td><td id="doubleWord"><td>
+          <tr> <td id="tripleWord"><td><td><td id="doubleLetter"><td><td><td><td id="tripleWord"><td><td><td><td id="doubleLetter"><td><td><td id="tripleWord">
+        </table>
+        <div id="tile-holder">
+
+        </div>
+      </div>
+      <div id="show-panel" class=".col2">
+        <div id='score-board'>
+
+        </div>
+        <div id="word-bank">
+
+        </div>
+        <div id="options">
+
+        </div>
+      </div>
     </div>
   </body>
 </html>

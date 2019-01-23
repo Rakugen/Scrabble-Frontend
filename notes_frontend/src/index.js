@@ -32,18 +32,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // .then(res => res.json())
     // .then(res => console.log(res))
 
-    fetch(`http://localhost:3000//api/v1/users/3`, {
-      method: "PATCH",
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body:JSON.stringify({
-        "score": 5043
-      })
-    })
-    .then(res => res.json())
-    .then(res => console.log(res))
+    // fetch(`http://localhost:3000//api/v1/users/3`, {
+    //   method: "PATCH",
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'Accept': 'application/json'
+    //   },
+    //   body:JSON.stringify({
+    //     "score": 5043
+    //   })
+    // })
+    // .then(res => res.json())
+    // .then(res => console.log(res))
 
     board.addEventListener('click', (e) => {
       const pickedLetter = `<div><span class="ScrabbleLetter">B</span>
