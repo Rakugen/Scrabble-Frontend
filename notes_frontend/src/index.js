@@ -48,11 +48,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     board.addEventListener('click', (e) => {
       const pickedLetter = `<div><span class="ScrabbleLetter">B</span>
       <span class="ScrabbleNumber">1</span></div>`
-        if(e.target.tagName === "SPAN"){
-          console.log(e.target.parentNode)
-          e.target.parentNode.remove()
-        } else if(e.target.tagName === "TD"){
-          e.target.innerHTML = pickedLetter
-        }
+        // if(e.target.tagName === "SPAN"){
+        //   console.log(e.target.parentNode)
+        //   e.target.parentNode.remove()
+        // } else if(e.target.tagName === "TD"){
+        //   e.target.innerHTML = pickedLetter
+        // }
+        console.log(e.target.parentNode)
     })
 });

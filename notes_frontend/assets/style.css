@@ -17,7 +17,7 @@ h1 {
 }
 table {
   table-layout: fixed;
-  border-top: 5px solid;
+  border: 20px solid #fff5d7;
   width: 60px;
   height: 60px;
   word-break: break-all;
@@ -27,6 +27,7 @@ table  tr  {
   height: 60px;
   width: 60px;
 }
+
 table  td{
   border :1px solid black;
   /* background:-webkit-gradient(linear, 100% 100%, 0% 5%, from(#c7c116), to(#e8e230)); */
@@ -44,22 +45,56 @@ table  td{
   white-space: nowrap;
   overflow: hidden;
 }
-#doubleWord {
+
+.doubleWord {
   background: #fad1e6;
 }
 
-#tripleWord {
+.tripleWord {
   background: #e86830;
 }
 
-#doubleLetter {
+.doubleLetter {
   background: #d1f3fa;
 }
 
-#tripleLetter {
+.tripleLetter {
   background: #16a9c7;
 }
 
+.starterSpot {
+  background: #e8308c;
+}
+
+#tile-holder {
+  height: 200px;
+  width: auto;
+  border-top: 5px solid;
+}
+
+#show-panel {
+  height: auto;
+  width: 500px;
+  border-left: 5px solid;
+}
+
+#score-board {
+  height: 25%;
+  border-bottom: 5px solid;
+}
+
+#word-bank {
+  height: 60%;
+  border-bottom: 5px solid;
+}
+
+#options {
+  height: 15%;
+}
+
+#game-title {
+  border-bottom: 5px solid;
+}
 
 .ScrabbleLetter {
   font-family: 'Asap', serif;
@@ -83,32 +118,6 @@ table  td{
    -moz-user-select: -moz-none;
    -webkit-user-select: none;
    -khtml-user-select: none;
-}
-
-#tile-holder {
-  height: 200px;
-  width: auto;
-  border-top: 5px solid;
-}
-
-#show-panel {
-  height: auto;
-  width: 500px;
-  border-left: 5px solid;
-}
-
-#score-board {
-  height: 25%;
-  border-bottom: 5px solid;
-}
-
-#word-bank {
-  height: 50%;
-  border-bottom: 5px solid;
-}
-
-#options {
-  height: 25%;
 }
 
 .row {
