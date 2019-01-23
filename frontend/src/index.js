@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     console.log("DOM fully loaded and parsed");
     const renderedBoard = document.querySelector("#boardtable")
     const tileHolder = document.querySelector("#tile-holder")
+    const submitBtn = document.querySelector("#submit-btn")
     let user1;
     let user2;
     let board = [
@@ -73,34 +74,48 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     }
 
-    function calculatePoints(array){
+    function calculatePoints(array, user){
 
+      array.forEach(data => {
+        return user.score += data[0].value
+      })
     }
 
     tileHolder.addEventListener('click', (e) => {
       if(e.target.tagName === "SPAN"){
         console.log(e.target.parentNode.dataset.id)
         activeTile = user1.tiles[e.target.parentNode.dataset.id]
-        console.log(activeTile)
       }
     })
 
     renderedBoard.addEventListener('click', (e) => {
-      console.log(activeTile)
+      // console.log(activeTile)
       const pickedLetter = `<div><span class="ScrabbleLetter">${activeTile.letter}</span>
       <span class="ScrabbleNumber">${activeTile.value}</span></div>`
         if(e.target.tagName === "SPAN"){
           // console.log(e.target.parent)
+          const row = e.target.parentNode.parentElement.parentElement.id
+          const col = e.target.parentNode.parentElement.id
+          for (var i = 0; i < currentlyPlayedTiles.length; i++) {
+            if(currentlyPlayedTiles[i][1] == row && currentlyPlayedTiles[i][2] == col ){
+              currentlyPlayedTiles.splice(i, 1)
+            }
+          }
+          console.log(currentlyPlayedTiles);
           e.target.parentNode.remove()
         } else if(e.target.tagName === "TD"){
           // console.log(e.target)
           const row = e.target.parentNode.id
           const col = e.target.id
           currentlyPlayedTiles.push([activeTile, row, col])
-          console.log(currentlyPlayedTiles)
+          // console.log(currentlyPlayedTiles)
           e.target.innerHTML = pickedLetter
         }
     })
 
+    submitBtn.addEventListener('click', e => {
+      let points = calculatePoints(currentlyPlayedTiles, user1)
+      console.log(user1.score);
+    })
 
 });
