@@ -9,9 +9,22 @@
   </head>
   <body>
     <div id="gamecanvas" class="row">
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <form id="new-form" class="" action="index.html" method="post">
+            <label for="">User1 Name</label>
+            <input id="user1-input" placeholder="Enter A Name"><br>
+            <label for="">User2 Name</label>
+            <input id="user2-input" placeholder="Enter A Name"><br>
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
       <div class=".col1">
-        <div id="game-title">
-          <h1>Scrabble</h1>
+        <div id="game-title" class="row">
+          <h1 class="col1">Scrabble</h1>
+          <button id="new-btn"  class="options-btns col3">New</button>
         </div>
       <!--- Board Render ---->
         <table id="boardtable">
@@ -256,11 +269,11 @@
               <td id="14" class="doubleWord">
               <td id="15">
         </table>
-        <div id="tile-holder" class="holder">
+        <div id="tile-holder" class="row">
 
         </div>
       </div>
-      <div id="show-panel" class=".col2">
+      <div id="show-panel" class="center">
         <div id='score-board'>
 
         </div>
@@ -268,7 +281,8 @@
 
         </div>
         <div id="options">
-          <button id="submit-btn" type="button" name="">Submit</button>
+          <button id="ready-btn"  class="options-btns">Ready</button>
+          <button id="submit-btn" class="options-btns">Submit</button><br>
         </div>
       </div>
     </div>
