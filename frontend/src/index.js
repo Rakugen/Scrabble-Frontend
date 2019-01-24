@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", e => {
     const tileHolder = document.querySelector("#tile-holder")
     const submitBtn = document.querySelector("#submit-btn")
     const buttons = tileHolder.getElementsByTagName("button")
+    const scoreBoard = document.querySelector("#score-board")
     let user1;
     let user2;
     let board = [
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", e => {
     let bag;
     let tiles;
     let activeTile;
-    let currentPlayer = user1;
+    let currentPlayer;
     let currentlyPlayedTiles = []
 
     fetch(`http://localhost:3000//api/v1/games`, {
@@ -48,8 +49,22 @@ document.addEventListener("DOMContentLoaded", e => {
         bag = res[2]
         tiles = bag.tiles
         console.log(user1, user2, bag, board, tiles)
-        refillHand(user1)
+        currentPlayer = user1
+        createScoreboard()
+        refillHand(currentPlayer)
+
     })
+
+    function createScoreboard(){
+      scoreBoard.innerHTML = `<div data-id=${user1.id}>
+          <h1>${user1.name}</h1>
+          <h2>${user1.score}</h2>
+        </div>
+        <div data-id=${user2.id}>
+            <h1>${user2.name}</h1>
+            <h2>${user2.score}</h2>
+        </div>`
+    }
 
     function refillHand(user){
         for(let i = user.tiles.length; i < 7; i++){
@@ -68,9 +83,10 @@ document.addEventListener("DOMContentLoaded", e => {
     }
 
     function displayLetters(user){
+        tileHolder.innerHTML = ""
         for(let i = 0; i < user.tiles.length; i++){
             tileHolder.innerHTML += `
-            <button type="button" name="button" data-id="${i}" class="col2 letter-select">
+            <button type="button" name="button" data-id="${i}" class="col2 letter-select ScrabbleBlock">
                 <span class="ScrabbleLetter1">${user.tiles[i].letter}</span>
                 <span class="ScrabbleNumber1">${user.tiles[i].value}</span>
             </button>
@@ -84,13 +100,33 @@ document.addEventListener("DOMContentLoaded", e => {
         })
     }
 
+    function removePlayerTiles(user){
+      for(let i = 0; i < currentlyPlayedTiles.length; i++){
+        for(let j = 0; j < user.tiles.length; j++){
+          if(currentlyPlayedTiles[i][0] === user.tiles[j]){
+            board[currentlyPlayedTiles[i][1]][currentlyPlayedTiles[i][2]] = user.tiles.splice(j, 1)
+          }
+        }
+      }
+      console.log(user.tiles, board)
+    }
+
     tileHolder.addEventListener('click', e => {
+      for (i of buttons) {
+        i.style.borderColor = 'white'
+      }
         if(e.target.tagName === "BUTTON"){
+            e.target.style.borderColor = 'green'
+            e.target.style.borderWidth = '4px'
+            e.target.style.borderStyle = 'solid'
             activeBtnId = e.target.dataset.id
-            activeTile = user1.tiles[activeBtnId]
+            activeTile = currentPlayer.tiles[activeBtnId]
          } else if(e.target.tagName === "SPAN"){
+             e.target.parentElement.style.borderColor = 'green'
+             e.target.parentElement.style.borderWidth = '4px'
+             e.target.parentElement.style.borderStyle = 'solid'
             activeBtnId = e.target.parentElement.dataset.id
-            activeTile = user1.tiles[activeBtnId]
+            activeTile = currentPlayer.tiles[activeBtnId]
          }
     })
 
@@ -116,6 +152,9 @@ document.addEventListener("DOMContentLoaded", e => {
                   currentlyPlayedTiles.push([activeTile, row, col])
                   e.target.innerHTML = pickedLetter
               }
+              for (i of buttons) {
+                i.style.borderColor = 'white'
+              }
               activeTile = 0
             }
         } else {
@@ -136,8 +175,14 @@ document.addEventListener("DOMContentLoaded", e => {
     })
 
       submitBtn.addEventListener('click', e => {
-          let points = calculatePoints(currentlyPlayedTiles, user1)
-          console.log(user1.score);
+          calculatePoints(currentlyPlayedTiles, currentPlayer)
+          createScoreboard()
+          removePlayerTiles(currentPlayer)
+          currentlyPlayedTiles = []
+          activeTile = 0
+          currentPlayer === user1 ? currentPlayer = user2 : currentPlayer = user1
+          refillHand(currentPlayer)
       })
+
 
 });
