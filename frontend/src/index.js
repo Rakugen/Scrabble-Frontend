@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", e => {
     const submitBtn = document.querySelector("#submit-btn")
     const buttons = tileHolder.getElementsByTagName("button")
     const scoreBoard = document.querySelector("#score-board")
+    const options = document.querySelector("#options")
+    const modal = document.querySelector('#myModal')
+    const newGameForm = document.querySelector("#new-form")
+    const newGameBtn = document.querySelector("#new-btn")
+    let user1Input = document.querySelector("#user1-input");
+    let user2Input = document.querySelector("#user2-input");
     let user1;
     let user2;
     let board = [
@@ -31,29 +37,31 @@ document.addEventListener("DOMContentLoaded", e => {
     let currentPlayer;
     let currentlyPlayedTiles = []
 
-    fetch(`http://localhost:3000//api/v1/games`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body:JSON.stringify({
-            "user1": "Woody",
-            "user2": "Buzz"
-        })
-    })
-    .then(res => res.json())
-    .then(res => {
-        user1 = res[0]
-        user2 = res[1]
-        bag = res[2]
-        tiles = bag.tiles
-        console.log(user1, user2, bag, board, tiles)
-        currentPlayer = user1
-        createScoreboard()
-        refillHand(currentPlayer)
+    function newGame(name1, name2){
+      fetch(`http://localhost:3000//api/v1/games`, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+          body:JSON.stringify({
+              "user1": name1,
+              "user2": name2
+          })
+      })
+      .then(res => res.json())
+      .then(res => {
+          user1 = res[0]
+          user2 = res[1]
+          bag = res[2]
+          tiles = bag.tiles
+          console.log(user1, user2, bag, board, tiles)
+          currentPlayer = user1
+          createScoreboard()
+          refillHand(currentPlayer)
 
-    })
+      })
+    }
 
     function createScoreboard(){
       scoreBoard.innerHTML = `<div data-id=${user1.id}>
@@ -174,15 +182,33 @@ document.addEventListener("DOMContentLoaded", e => {
         console.log(currentlyPlayedTiles)
     })
 
-      submitBtn.addEventListener('click', e => {
-          calculatePoints(currentlyPlayedTiles, currentPlayer)
-          createScoreboard()
-          removePlayerTiles(currentPlayer)
-          currentlyPlayedTiles = []
-          activeTile = 0
-          currentPlayer === user1 ? currentPlayer = user2 : currentPlayer = user1
-          refillHand(currentPlayer)
+    options.addEventListener('click', e => {
+
+          if(e.target.innerHTML === "Submit"){
+            calculatePoints(currentlyPlayedTiles, currentPlayer)
+            createScoreboard()
+            removePlayerTiles(currentPlayer)
+            currentlyPlayedTiles = []
+            activeTile = 0
+            tileHolder.innerHTML = ""
+          } else if(e.target.innerHTML === "Ready"){
+            currentPlayer === user1 ? currentPlayer = user2 : currentPlayer = user1
+            refillHand(currentPlayer)
+          }
       })
 
+    newGameBtn.addEventListener("click", (e) => {
+      console.log(e.target)
+      modal.style.display = "block"
+    })
+
+    newGameForm.addEventListener("submit", e => {
+      e.preventDefault()
+      const user1Name = user1Input.value
+      const user2Name = user2Input.value
+
+      newGame(user1Name, user2Name)
+      modal.style.display = "none"
+    })
 
 });
