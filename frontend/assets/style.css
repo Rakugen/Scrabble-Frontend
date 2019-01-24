@@ -31,7 +31,7 @@ table  tr  {
 table  td{
   border :1px solid black;
   /* background:-webkit-gradient(linear, 100% 100%, 0% 5%, from(#c7c116), to(#e8e230)); */
-  background: #eeca66;
+  background: rgb(205, 199, 165);
   width:60px;
   padding: 0px;
   min-width: 60px;
@@ -101,7 +101,7 @@ table  td{
   font-size: 45px;
   color: #272832;
   text-shadow:1px 1px 0px #fff5d7;
-  margin: 0px;
+  margin: auto;
   user-select: none;
    -moz-user-select: -moz-none;
    -webkit-user-select: none;
@@ -110,10 +110,10 @@ table  td{
 
 .ScrabbleNumber {
   font-family: 'Asap', serif;
-  font-size: 10px;
+  font-size: 12px;
   color: #272832;
   text-shadow:1px 1px 0px #fff5d7;
-  margin: 0px;
+  margin: auto;
   user-select: none;
    -moz-user-select: -moz-none;
    -webkit-user-select: none;
@@ -133,7 +133,7 @@ table  td{
 
 .ScrabbleNumber1 {
   font-family: 'Asap', serif;
-  font-size: 50px;
+  font-size: 25px;
   color: #272832;
   text-shadow:1px 1px 0px #fff5d7;
   margin: 0px;
@@ -141,6 +141,39 @@ table  td{
    -moz-user-select: -moz-none;
    -webkit-user-select: none;
    -khtml-user-select: none;
+}
+
+.ScrabbleBlock{
+  background-color: #f6e1a6;
+	background:-webkit-gradient(linear, 100% 100%, 0% 5%, from(#d8bd72), to(#fae1a6));
+	height: 100%;
+	width: 100%;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	-moz-box-shadow:0px 3px 5px #000;
+	-webkit-box-shadow:0px 3px 5px #000;
+	box-shadow:0px 0px 5px #a000;
+	float: left;
+	text-align: center;
+	/* -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.6, transparent), to(rgba(255, 255, 255, 0.5)));*/
+	border-top-width: 1px;
+	border-right-width: 4px;
+	border-bottom-width: 4px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #f8e6b1;
+	border-right-color: #f8e6b1;
+	border-bottom-color: #cab06b;
+	border-left-color: #f8e6b1;
+	 user-select: none;
+   -moz-user-select: -moz-none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+
 }
 
 .row {

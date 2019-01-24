@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", e => {
     const renderedBoard = document.querySelector("#boardtable")
     const tileHolder = document.querySelector("#tile-holder")
     const submitBtn = document.querySelector("#submit-btn")
+    const buttons = tileHolder.getElementsByTagName("button")
     let user1;
     let user2;
     let board = [
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", e => {
     let bag;
     let tiles;
     let activeTile;
+    let currentPlayer = user1;
     let currentlyPlayedTiles = []
 
     fetch(`http://localhost:3000//api/v1/games`, {
@@ -83,42 +85,54 @@ document.addEventListener("DOMContentLoaded", e => {
     }
 
     tileHolder.addEventListener('click', e => {
-
         if(e.target.tagName === "BUTTON"){
-          console.log(e.target)
-            activeTile = user1.tiles[e.target.dataset.id]
-        } else if(e.target.parentNode.tagName === "BUTTON"){
-            console.log(e.target.parentNode)
-            activeTile = user1.tiles[e.target.parentNode.dataset.id]
-        }
+            activeBtnId = e.target.dataset.id
+            activeTile = user1.tiles[activeBtnId]
+         } else if(e.target.tagName === "SPAN"){
+            activeBtnId = e.target.parentElement.dataset.id
+            activeTile = user1.tiles[activeBtnId]
+         }
     })
 
     renderedBoard.addEventListener('click', e => {
-        const pickedLetter = `
-            <div>
-                <span class="ScrabbleLetter">${activeTile.letter}</span>
-                <span class="ScrabbleNumber">${activeTile.value}</span>
+        if(activeTile !== 0){
+            const pickedLetter = `
+            <div class="ScrabbleBlock">
+            <span class="ScrabbleLetter">${activeTile.letter}</span>
+            <span class="ScrabbleNumber">${activeTile.value}</span>
             </div>`
 
-        if(e.target.tagName === "SPAN"){
-            const row = e.target.parentNode.parentElement.parentElement.id
-            const col = e.target.parentNode.parentElement.id
-
-            for (var i = 0; i < currentlyPlayedTiles.length; i++) {
-                if(currentlyPlayedTiles[i][1] == row && currentlyPlayedTiles[i][2] == col ){
-                    currentlyPlayedTiles.splice(i, 1)
+            if(e.target.tagName === "TD"){
+                const row = e.target.parentNode.id
+                const col = e.target.id
+                let foundTile = false;
+                for (var i = 0; i < currentlyPlayedTiles.length; i++) {
+                  if (currentlyPlayedTiles[i][0] === activeTile){
+                    foundTile = true
+                  }
                 }
+
+              if (foundTile === false) {
+                  currentlyPlayedTiles.push([activeTile, row, col])
+                  e.target.innerHTML = pickedLetter
+              }
+              activeTile = 0
             }
+        } else {
+            if(e.target.tagName === "SPAN"){
+                const row = e.target.parentNode.parentElement.parentElement.id
+                const col = e.target.parentNode.parentElement.id
 
-            e.target.parentNode.remove()
+                for (var i = 0; i < currentlyPlayedTiles.length; i++) {
+                    if(currentlyPlayedTiles[i][1] == row && currentlyPlayedTiles[i][2] == col ){
+                        currentlyPlayedTiles.splice(i, 1)
+                    }
+                }
 
-        } else if(e.target.tagName === "TD"){
-            const row = e.target.parentNode.id
-            const col = e.target.id
-
-            currentlyPlayedTiles.push([activeTile, row, col])
-            e.target.innerHTML = pickedLetter
+                e.target.parentNode.remove()
+            }
         }
+        console.log(currentlyPlayedTiles)
     })
 
       submitBtn.addEventListener('click', e => {
