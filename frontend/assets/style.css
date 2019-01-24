@@ -67,7 +67,7 @@ table  td{
 }
 
 #tile-holder {
-  height: 200px;
+  height: 119px;
   width: auto;
   border-top: 5px solid;
 }
@@ -119,6 +119,29 @@ table  td{
    -webkit-user-select: none;
    -khtml-user-select: none;
 }
+.ScrabbleLetter1 {
+  font-family: 'Asap', serif;
+  font-size: 100px;
+  color: #272832;
+  text-shadow:1px 1px 0px #fff5d7;
+  margin: 0px;
+  user-select: none;
+   -moz-user-select: -moz-none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+}
+
+.ScrabbleNumber1 {
+  font-family: 'Asap', serif;
+  font-size: 50px;
+  color: #272832;
+  text-shadow:1px 1px 0px #fff5d7;
+  margin: 0px;
+  user-select: none;
+   -moz-user-select: -moz-none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+}
 
 .row {
   display: flex
@@ -130,12 +153,4 @@ table  td{
 
 .col2 {
   flex: 25%;
-}
-
-.holder{
-  display: flex;
-}
-
-.holdercol1 {
-  flex: 25%
 }
