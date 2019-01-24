@@ -56,10 +56,7 @@ document.addEventListener("DOMContentLoaded", e => {
           bag = res[2]
           tiles = bag.tiles
           console.log(user1, user2, bag, board, tiles)
-          currentPlayer = user1
           createScoreboard()
-          refillHand(currentPlayer)
-
       })
     }
 
@@ -112,7 +109,8 @@ document.addEventListener("DOMContentLoaded", e => {
       for(let i = 0; i < currentlyPlayedTiles.length; i++){
         for(let j = 0; j < user.tiles.length; j++){
           if(currentlyPlayedTiles[i][0] === user.tiles[j]){
-            board[currentlyPlayedTiles[i][1]][currentlyPlayedTiles[i][2]] = user.tiles.splice(j, 1)
+            const tempTile = user.tiles.splice(j, 1)
+            board[currentlyPlayedTiles[i][1]][currentlyPlayedTiles[i][2]] = tempTile[0]
           }
         }
       }
@@ -183,19 +181,18 @@ document.addEventListener("DOMContentLoaded", e => {
     })
 
     options.addEventListener('click', e => {
-
-          if(e.target.innerHTML === "Submit"){
-            calculatePoints(currentlyPlayedTiles, currentPlayer)
-            createScoreboard()
-            removePlayerTiles(currentPlayer)
-            currentlyPlayedTiles = []
-            activeTile = 0
-            tileHolder.innerHTML = ""
-          } else if(e.target.innerHTML === "Ready"){
-            currentPlayer === user1 ? currentPlayer = user2 : currentPlayer = user1
-            refillHand(currentPlayer)
-          }
-      })
+      if(e.target.innerHTML === "Submit"){
+        calculatePoints(currentlyPlayedTiles, currentPlayer)
+        createScoreboard()
+        removePlayerTiles(currentPlayer)
+        currentlyPlayedTiles = []
+        activeTile = 0
+        tileHolder.innerHTML = ""
+      } else if(e.target.innerHTML === "Ready"){
+        currentPlayer === user1 ? currentPlayer = user2 : currentPlayer = user1
+        refillHand(currentPlayer)
+      }
+    })
 
     newGameBtn.addEventListener("click", (e) => {
       console.log(e.target)
