@@ -147,6 +147,7 @@ document.addEventListener("DOMContentLoaded", e => {
         --coordinate[0]
       }
     }
+
     function horizontalSideWords(letter){
       let coordinate = [letter[1], letter[2]]
       ++coordinate[1]
@@ -327,8 +328,251 @@ document.addEventListener("DOMContentLoaded", e => {
         const user1Name = user1Input.value
         const user2Name = user2Input.value
 
-        newGame(user1Name, user2Name)
         modal.style.display = "none"
+        boardtable.innerHTML = `<tbody><tr id="1">
+            <td id="1" class="tripleWord">
+            </td><td id="2">
+            </td><td id="3">
+            </td><td id="4" class="doubleLetter">
+            </td><td id="5">
+            </td><td id="6">
+            </td><td id="7">
+            </td><td id="8" class="tripleWord">
+            </td><td id="9">
+            </td><td id="10">
+            </td><td id="11">
+            </td><td id="12" class="doubleLetter">
+            </td><td id="13">
+            </td><td id="14">
+            </td><td id="15" class="tripleWord">
+          </td></tr><tr id="2">
+            <td id="1">
+            </td><td id="2" class="doubleWord">
+            </td><td id="3">
+            </td><td id="4">
+            </td><td id="5">
+            </td><td id="6" class="tripleLetter">
+            </td><td id="7">
+            </td><td id="8">
+            </td><td id="9">
+            </td><td id="10" class="tripleLetter">
+            </td><td id="11">
+            </td><td id="12">
+            </td><td id="13">
+            </td><td id="14" class="doubleWord">
+            </td><td id="15">
+          </td></tr><tr id="3">
+            <td id="1">
+            </td><td id="2">
+            </td><td id="3" class="doubleWord">
+            </td><td id="4">
+            </td><td id="5">
+            </td><td id="6">
+            </td><td id="7" class="doubleLetter">
+            </td><td id="8">
+            </td><td id="9" class="doubleLetter">
+            </td><td id="10">
+            </td><td id="11">
+            </td><td id="12">
+            </td><td id="13" class="doubleWord">
+            </td><td id="14">
+            </td><td id="15">
+          </td></tr><tr id="4">
+            <td id="1" class="doubleLetter">
+            </td><td id="2">
+            </td><td id="3">
+            </td><td id="4" class="doubleWord">
+            </td><td id="5">
+            </td><td id="6">
+            </td><td id="7">
+            </td><td id="8" class="doubleLetter">
+            </td><td id="9">
+            </td><td id="10">
+            </td><td id="11">
+            </td><td id="12" class="doubleWord">
+            </td><td id="13">
+            </td><td id="14">
+            </td><td id="15" class="doubleLetter">
+          </td></tr><tr id="5">
+            <td id="1">
+            </td><td id="2">
+            </td><td id="3">
+            </td><td id="4">
+            </td><td id="5" class="doubleWord">
+            </td><td id="6">
+            </td><td id="7">
+            </td><td id="8">
+            </td><td id="9">
+            </td><td id="10">
+            </td><td id="11" class="doubleWord">
+            </td><td id="12">
+            </td><td id="13">
+            </td><td id="14">
+            </td><td id="15">
+          </td></tr><tr id="6">
+            <td id="1">
+            </td><td id="2" class="tripleLetter">
+            </td><td id="3">
+            </td><td id="4">
+            </td><td id="5">
+            </td><td id="6" class="tripleLetter">
+            </td><td id="7">
+            </td><td id="8">
+            </td><td id="9">
+            </td><td id="10" class="tripleLetter">
+            </td><td id="11">
+            </td><td id="12">
+            </td><td id="13">
+            </td><td id="14" class="tripleLetter">
+            </td><td id="15">
+          </td></tr><tr id="7">
+            <td id="1">
+            </td><td id="2">
+            </td><td id="3" class="doubleLetter">
+            </td><td id="4">
+            </td><td id="5">
+            </td><td id="6">
+            </td><td id="7" class="doubleLetter">
+            </td><td id="8">
+            </td><td id="9" class="doubleLetter">
+            </td><td id="10">
+            </td><td id="11">
+            </td><td id="12">
+            </td><td id="13" class="doubleLetter">
+            </td><td id="14">
+            </td><td id="15">
+          </td></tr><tr id="8">
+            <td id="1" class="tripleWord">
+            </td><td id="2">
+            </td><td id="3">
+            </td><td id="4" class="doubleLetter">
+            </td><td id="5">
+            </td><td id="6">
+            </td><td id="7">
+            </td><td id="8" class="starterSpot">
+            </td><td id="9">
+            </td><td id="10">
+            </td><td id="11">
+            </td><td id="12" class="doubleLetter">
+            </td><td id="13">
+            </td><td id="14">
+            </td><td id="15" class="tripleWord">
+          </td></tr><tr id="9">
+            <td id="1">
+            </td><td id="2">
+            </td><td id="3" class="doubleLetter">
+            </td><td id="4">
+            </td><td id="5">
+            </td><td id="6">
+            </td><td id="7" class="doubleLetter">
+            </td><td id="8">
+            </td><td id="9" class="doubleLetter">
+            </td><td id="10">
+            </td><td id="11">
+            </td><td id="12">
+            </td><td id="13" class="doubleLetter">
+            </td><td id="14">
+            </td><td id="15">
+          </td></tr><tr id="10">
+            <td id="1">
+            </td><td id="2" class="tripleLetter">
+            </td><td id="3">
+            </td><td id="4">
+            </td><td id="5">
+            </td><td id="6" class="tripleLetter">
+            </td><td id="7">
+            </td><td id="8">
+            </td><td id="9">
+            </td><td id="10" class="tripleLetter">
+            </td><td id="11">
+            </td><td id="12">
+            </td><td id="13">
+            </td><td id="14" class="tripleLetter">
+            </td><td id="15">
+          </td></tr><tr id="11">
+            <td id="1">
+            </td><td id="2">
+            </td><td id="3">
+            </td><td id="4">
+            </td><td id="5" class="doubleWord">
+            </td><td id="6">
+            </td><td id="7" class="doubleLetter">
+            </td><td id="8">
+            </td><td id="9" class="doubleLetter">
+            </td><td id="10">
+            </td><td id="11" class="doubleWord">
+            </td><td id="12">
+            </td><td id="13">
+            </td><td id="14">
+            </td><td id="15">
+          </td></tr><tr id="12">
+            <td id="1" class="doubleLetter">
+            </td><td id="2">
+            </td><td id="3">
+            </td><td id="4" class="doubleWord">
+            </td><td id="5">
+            </td><td id="6">
+            </td><td id="7">
+            </td><td id="8" class="doubleLetter">
+            </td><td id="9">
+            </td><td id="10">
+            </td><td id="11">
+            </td><td id="12" class="doubleWord">
+            </td><td id="13">
+            </td><td id="14">
+            </td><td id="15" class="doubleLetter">
+          </td></tr><tr id="13">
+            <td id="1">
+            </td><td id="2">
+            </td><td id="3" class="doubleWord">
+            </td><td id="4">
+            </td><td id="5">
+            </td><td id="6">
+            </td><td id="7">
+            </td><td id="8">
+            </td><td id="9">
+            </td><td id="10">
+            </td><td id="11">
+            </td><td id="12">
+            </td><td id="13" class="doubleWord">
+            </td><td id="14">
+            </td><td id="15">
+          </td></tr><tr id="14">
+              <td id="1">
+              </td><td id="2" class="doubleWord">
+              </td><td id="3">
+              </td><td id="4">
+              </td><td id="5">
+              </td><td id="6" class="tripleLetter">
+              </td><td id="7">
+              </td><td id="8">
+              </td><td id="9">
+              </td><td id="10" class="tripleLetter">
+              </td><td id="11">
+              </td><td id="12">
+              </td><td id="13">
+              </td><td id="14" class="doubleWord">
+              </td><td id="15">
+          </td></tr><tr id="15">
+              <td id="1" class="tripleWord">
+              </td><td id="2">
+              </td><td id="3">
+              </td><td id="4" class="doubleLetter">
+              </td><td id="5">
+              </td><td id="6">
+              </td><td id="7">
+              </td><td id="8" class="tripleWord">
+              </td><td id="9">
+              </td><td id="10">
+              </td><td id="11">
+              </td><td id="12" class="doubleLetter">
+              </td><td id="13">
+              </td><td id="14">
+              </td><td id="15" class="tripleWord">
+
+        </td></tr></tbody>`
+        tileHolder.innerHTML = ""
+        newGame(user1Name, user2Name)
     })
 
 });
