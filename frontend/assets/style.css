@@ -1,6 +1,6 @@
 body {
   /* background:-webkit-gradient(linear, 100% 100%, 0% 5%, from(#e3c0ac), to(#fae6d1)); */
-    background-image: url(jon-moore-399489-unsplash.jpg);
+    /* background-image: url(jon-moore-399489-unsplash.jpg); */
   margin-left: 25%;
 	margin-top: 150px;
 	/* margin-right: 250px;
@@ -32,7 +32,7 @@ table  tr  {
 }
 
 table  td{
-  border :1px solid black;
+  border :1px solid white;
   /* background:-webkit-gradient(linear, 100% 100%, 0% 5%, from(#c7c116), to(#e8e230)); */
   background: rgb(205, 199, 165);
   width:60px;
@@ -43,7 +43,7 @@ table  td{
   min-height: 60px;
   max-height: 60px;
   height: 60px;
-  border: 2px solid;
+  border: 2px solid white;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
