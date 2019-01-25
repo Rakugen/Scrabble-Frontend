@@ -58,20 +58,34 @@ document.addEventListener("DOMContentLoaded", e => {
             user2 = res[1]
             bag = res[2]
             tiles = bag.tiles
+            currentPlayer = user1
             console.log(user1, user2, bag, board, tiles)
             createScoreboard()
         })
     }
 
+
+
     function createScoreboard(){
+      if( currentPlayer === user1){
         scoreBoard.innerHTML = `<div data-id=${user1.id}>
-                <h1>${user1.name}</h1>
+              <h1><i class="arrow right"></i>  ${user1.name}</h1>
                 <h2>${user1.score}</h2>
             </div>
             <div data-id=${user2.id}>
                 <h1>${user2.name}</h1>
                 <h2>${user2.score}</h2>
             </div>`
+      } else if ( currentPlayer === user2){
+        scoreBoard.innerHTML = `<div data-id=${user1.id}>
+                <h1>${user1.name}</h1>
+                <h2>${user1.score}</h2>
+            </div>
+            <div data-id=${user2.id}>
+                <h1><i class="arrow right"></i>  ${user2.name}</h1>
+                <h2>${user2.score}</h2>
+            </div>`
+      }
     }
 
     function refillHand(user){
@@ -308,13 +322,13 @@ document.addEventListener("DOMContentLoaded", e => {
             }
             calculatePoints(foundLetters, currentPlayer)
             console.log(foundLetters)
-            createScoreboard()
             foundLetters = []
             currentlyPlayedTiles = []
             activeTile = 0
             tileHolder.innerHTML = ""
-        } else if(e.target.innerHTML === "Ready"){
             currentPlayer === user1 ? currentPlayer = user2 : currentPlayer = user1
+            createScoreboard()
+        } else if(e.target.innerHTML === "Ready"){
             refillHand(currentPlayer)
       }
     })
