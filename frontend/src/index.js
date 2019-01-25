@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", e => {
     let currentlyPlayedTiles = [];
     let foundLetters = [];
     let direction;
+    let addedWord = false;
 
     function newGame(name1, name2){
         fetch(`http://localhost:3000//api/v1/games`, {
@@ -103,7 +104,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
     function calculatePoints(array, user){
         array.forEach(data => {
-            user.score += data[0].value
+            user.score += data.value
         })
     }
 
@@ -123,6 +124,47 @@ document.addEventListener("DOMContentLoaded", e => {
         return "horizontal"
       } else {
         return "vertical"
+      }
+    }
+
+    function verticalSideWords(letter){
+      let coordinate = [letter[1], letter[2]]
+      ++coordinate[0]
+      while(board[coordinate[0]][coordinate[1]] !== 0 ) {
+        foundLetters.push(board[coordinate[0]][coordinate[1]])
+        addedWord = true;
+        if(coordinate[0] == 15){
+          break
+        } else {
+          ++coordinate[0]
+        }
+      }
+      coordinate = [letter[1], letter[2]]
+      --coordinate[0]
+      while(board[coordinate[0]][coordinate[1]] !== 0) {
+        foundLetters.unshift(board[coordinate[0]][coordinate[1]])
+        addedWord = true;
+        --coordinate[0]
+      }
+    }
+    function horizontalSideWords(letter){
+      let coordinate = [letter[1], letter[2]]
+      ++coordinate[1]
+      while(board[coordinate[0]][coordinate[1]] !== 0 ) {
+        foundLetters.push(board[coordinate[0]][coordinate[1]])
+        addedWord = true;
+        if(coordinate[1] == 15){
+          break
+        } else {
+          ++coordinate[1]
+        }
+      }
+      coordinate = [letter[1], letter[2]]
+      --coordinate[1]
+      while(board[coordinate[0]][coordinate[1]] !== 0) {
+        foundLetters.unshift(board[coordinate[0]][coordinate[1]])
+        addedWord = true;
+        --coordinate[1]
       }
     }
 
@@ -242,14 +284,28 @@ document.addEventListener("DOMContentLoaded", e => {
 
     options.addEventListener('click', e => {
         if(e.target.innerHTML === "Submit"){
-            // calculatePoints(currentlyPlayedTiles, currentPlayer)
             console.log(direction)
             removePlayerTiles(currentPlayer)
             if (direction === "horizontal"){
               horizontalFindWord(currentlyPlayedTiles)
+              for(let i = 0; i < currentlyPlayedTiles.length; i++){
+                verticalSideWords(currentlyPlayedTiles[i])
+                if(addedWord === true){
+                  foundLetters.push(currentlyPlayedTiles[i][0])
+                  addedWord = false;
+                }
+              }
             } else {
               verticalFindWord(currentlyPlayedTiles)
+              for(let i = 0; i < currentlyPlayedTiles.length; i++){
+                horizontalSideWords(currentlyPlayedTiles[i])
+                if(addedWord === true){
+                  foundLetters.push(currentlyPlayedTiles[i][0])
+                  addedWord = false;
+                }
+              }
             }
+            calculatePoints(foundLetters, currentPlayer)
             console.log(foundLetters)
             createScoreboard()
             foundLetters = []
