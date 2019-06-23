@@ -1,4 +1,4 @@
-# Scrabble
+# Scrabble - Client Side Front End
 Description of project here. Include some gifs later showing how it works.
 
 ##Getting Started, Install Guide
