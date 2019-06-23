@@ -1,17 +1,42 @@
-# Scrabble - Client Side Front End
-Description of project here. Include some gifs later showing how it works.
+## Quack - Frontend
+Quack is an interactive website that gives users a fun and easy solution to group communication. Users can send and received messages in real time with auto-updating individualized chatrooms. Past messages are stored server side on the backend API so that you will never have to worry about forgetting a conversation. With included timestamps and metadata, simply login and return to your chatroom to see what everyone was chatting about while you were gone.
 
-##Getting Started, Install Guide
-Detailed outline of how to run the app, ie: fork/clone, bundle install, open server
+## Contents
+- [Setup](#setup)
+- [Features](#features)
+  - [Homepage](#homepage)
+  - [Users](#users)
+  - [Chatrooms](#chatrooms)
+- [Work In Progress](#work-in-progress)
+- [Contact](#contact)
 
-##How it works, Any settings that can be changed
-Explanation of what is happening/what it is doing.
-Talk about features/buttons/sliders/toggles that we have added.
+## Setup
+(how to clone and build, npm install, npm start, etc)
 
-##To Do, Future improvements, Challenges we faced
-Talk about the project experience as a whole, any challenges we faced
-along the way. Any clever design choices/implementations we chose.
 
-##Special Thanks, Footnotes, Resources, Further Readings
-Anything extra that doesn't exactly fit elsewhere. Sites/resources used,
-acknowledgements, about us.
+## Features
+These are some of the key features in Quack - Frontend:
+
+### Homepage
+
+
+### Users
+JWT Auth is used for proper and secure user authentication that keeps sensitive user information private.
+
+### Chatrooms
+
+
+## Work In progress
+Additional features that still need to be added:
+  - Expanded User Customization : personal icons and changeable fonts
+  - Full User Editing : allow users to edit icon, font and password
+  - Embedded Media : auto detect img/video/audio URLs and embed them into respective formats
+  - Toast Notifications : toasts appear whenever new message or user joins/leaves
+  - Additional Highlighting : improve on highlighting compenents to draw attention whenever something important occurs (user joins/leaves, new messages, new invitations)
+  - Audio Support : allow users to create audio chatrooms for voice chat
+  - Invitations : users can invite other users to a chatroom
+
+## Contact
+  - Email: simonlee0306@gmail.com
+  - LinkedIn: https://www.linkedin.com/in/simonlee0306
+  - Website: https://rakugen.github.io/
